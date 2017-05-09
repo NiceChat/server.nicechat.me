@@ -2,3 +2,4 @@
 application/config/database.php
 nginx.log
 publish.sh
+*.log

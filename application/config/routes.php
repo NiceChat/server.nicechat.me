@@ -52,6 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['default_controller'] = 'welcome';
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;
+
+// 微信公众号号相关设置
+$route['wx'] = 'wx/index';
+
 $route['news/add'] = 'news/add';
 $route['news/success'] = 'news/success';
 $route['news/(:any)'] = 'news/view/$1';
