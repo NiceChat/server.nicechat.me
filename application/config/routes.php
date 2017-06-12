@@ -54,7 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['translate_uri_dashes'] = FALSE;
 
 // 微信公众号号相关设置
-$route['wx'] = 'wx/index';
+$route['wechat'] = 'wechat/index';
+$route['wechat/test'] = 'wechat/test';
 
 $route['news/add'] = 'news/add';
 $route['news/success'] = 'news/success';
