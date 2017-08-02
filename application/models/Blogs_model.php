@@ -11,10 +11,14 @@
     }
 
     // 获取博客列表ORDER BY mtime
-    public function get_blogs()
+    public function get_blogs($page, $offset)
     {
-      $sql = 'select * from blogs order by mtime DESC';
-      $query = $this->db->get_where('blogs');
+      $page = intval($page);
+      $offset = intval($offset);
+      $start = ($page - 1) * $offset;
+      $end = $page * $offset;
+      $sql = 'select * from blogs order by mtime DESC LIMIT '.$start.', '.$end;
+      $query = $this->db->query($sql);
       return $query->result_array();
     }
 

@@ -15,7 +15,9 @@
     public function getBlogList($offset = 10, $page = 1)
     {
       header('content-type:application/json;charset=utf8');
-      $data['list'] = $this->blogs_model->get_blogs();
+      $offset = $_POST['offset'];
+      $page = $_POST['page'];
+      $data['list'] = $this->blogs_model->get_blogs($page, $offset);
       $data['code'] = 0;
       $data['offset'] = $offset; 
       $data['page'] = $page;

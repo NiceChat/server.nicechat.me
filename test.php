@@ -1,5 +1,1 @@
-<?php
-	
-phpinfo();
-
-?>
+scp -i ~/.ssh/google_compute_engine -r /http/server.nicechat.com/application/libraries/LogLeiLei.php root@104.155.220.57:/var/www/server.nicechat.me/application/libraries/LogLeiLei.php

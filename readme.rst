@@ -68,3 +68,7 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+
+# 上传文件到服务器 这个不能通过sftp的usernaem和password去写让我很蛋疼
+scp -i ~/.ssh/google_compute_engine -r /http/server.nicechat.com/application/controllers/Wechat.php root@104.155.220.57:/var/www/server.nicechat.me/application/controllers/Wechat.php
