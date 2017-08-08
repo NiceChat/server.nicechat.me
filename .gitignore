@@ -3,3 +3,6 @@ application/config/database.php
 nginx.log
 publish.sh
 *.log
+vendor/
+composer.lock
+composer.phar
