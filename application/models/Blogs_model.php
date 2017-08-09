@@ -28,7 +28,6 @@
       try {
         $sql = 'select * from blogs WHERE id='.$id;
         $query = $this->db->query($sql);
-        // $query = $this->db->get_where('news', array('slug' => $slug));
         return $query->row();
       } catch (Exception $e) {
         $error = $this->db->error();
@@ -36,19 +35,19 @@
     }
 
     // 插入一条博客
-    public function insert_one_blog($title, $content, $ctime, $author)
+    public function insert_one_blog($title, $content, $html, $ctime, $author)
     {
-      $sql = "INSERT INTO blogs (title, content, ctime, mtime, author) VALUES (".$this->db->escape($title).", ".$this->db->escape($content).",".$this->db->escape($ctime).",".$ctime.",".$this->db->escape($author).")";
+      $sql = "INSERT INTO blogs (title, content, html, ctime, mtime, author) VALUES (".$this->db->escape($title).", ".$this->db->escape($content).",".$this->db->escape($html).",".$this->db->escape($ctime).",".$ctime.",".$this->db->escape($author).")";
       $this->db->query($sql);
       // 返回影响的行数
       return $this->db->affected_rows();
     }
 
     // 更新一条博客
-    public function update_one_blog($id, $title, $content, $author)
+    public function update_one_blog($id, $title, $content, $html, $author)
     {
       $mtime = time();
-      $sql = "UPDATE blogs SET  title = ".$this->db->escape($title).", content = ".$this->db->escape($content).", mtime = ".$mtime.", author = ".$this->db->escape($author)." WHERE id = ".$id;
+      $sql = "UPDATE blogs SET  title = ".$this->db->escape($title).", content = ".$this->db->escape($content).", html=".$this->db->escape($html).", mtime = ".$mtime.", author = ".$this->db->escape($author)." WHERE id = ".$id;
       $this->db->query($sql);
       // 返回影响条目数
       return $this->db->affected_rows();
